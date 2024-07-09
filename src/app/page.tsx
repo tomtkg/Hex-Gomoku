@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Board } from './board';
+import { Board } from './Board';
 
-export default function Game() {
+export default function Page() {
   return <Board />;
 }
