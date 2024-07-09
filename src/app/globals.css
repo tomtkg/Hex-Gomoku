@@ -1,0 +1,39 @@
+h1 {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+span{
+  margin-right: 25px;
+ }
+
+.button {
+  padding: 2px 6px;
+  font-size: 24px;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.text {
+  font-size: 2px;
+  fill: black;
+  stroke: black;
+}
+
+.text_o {
+  font-size: 6px;
+  fill: red;
+  stroke: red;
+}
+
+.text_x {
+  font-size: 6px;
+  fill: blue;
+  stroke: blue;
+}
