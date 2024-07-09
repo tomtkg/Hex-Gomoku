@@ -12,7 +12,7 @@ jobs:
       - run: npm run build
         env:
           PUBLIC_URL: /Hex-Gomoku
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
   deploy:
