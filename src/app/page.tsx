@@ -94,54 +94,51 @@ function calculateWinner(id: number, board: CellData[]): number[] {
 export default function Game() {
   const [board, setBoard] = useState<CellData[]>(createInitialBoard());
   const [history, setHistory] = useState<number[]>([]);
-  const [step, setStep] = useState(0);
   const [win, setWin] = useState<number[]>([]);
 
-  const xIsNext = step % 2 === 0
+  const step = history.length;
+  const xIsNext = step % 2 === 0;
 
   function handleClick(id: number) {
     if (board[id].t || win.length > 0) {
       return;
     }
 
-    history.push(id);
     board[id].t = xIsNext ? '×' : '○';
     const winner = calculateWinner(id, board);
 
     if (winner.length > 0) {
       setWin(winner);
-      for (let id of winner) {
-        board[id].win = true;
+      for (let winId of winner) {
+        board[winId].win = true;
       }
     }
-    
+
     setBoard(board);
-    setHistory(history);
-    setStep(step + 1);
+    setHistory([...history, id]);
   }
 
   function goBack() {
-    const id = history[step - 1]
-    board[id].t = null
-    
+    const id = history[step - 1];
+    board[id].t = null;
+
     if (win.length > 0) {
-      for (let id of win) {
-        board[id].win = false;
+      for (let winId of win) {
+        board[winId].win = false;
       }
       setWin([]);
     }
 
     setBoard(board);
     setHistory(history.slice(0, step - 1));
-    setStep(step - 1);
   }
 
   return (
     <>
       <h1>
         <span>Step {step}</span>
-        <span>{win.length > 0 ? ` winner: ${xIsNext ? '○' : '×'}` : ` next mark ${xIsNext ? '×' : '○'}`}</span>
-        <button className="button" onClick={() => step > 0 && goBack()} disabled={step <= 0}>Go back</button>
+        <span>{win.length > 0 ? ` winner ${xIsNext ? '○' : '×'}` : ` next mark ${xIsNext ? '×' : '○'}`}</span>
+        <button className="button" onClick={goBack} disabled={step <= 0}>Go back</button>
       </h1>
       <div className="game">
         <div>
