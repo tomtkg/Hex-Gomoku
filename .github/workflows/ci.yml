@@ -14,7 +14,7 @@ jobs:
           PUBLIC_URL: /Hex-Gomoku
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./next
   deploy:
     needs: build
     permissions:
