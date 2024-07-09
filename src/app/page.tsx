@@ -20,13 +20,13 @@ type CellProps = {
 };
 
 function Cell({ data, onSquareClick }: CellProps): JSX.Element {
-  const textClass = data.t === '×' ? 'text_x' : data.t === '○' ? 'text_o' : 'text';
+  const cellClass = data.t === '×' ? 'cell_x' : data.t === '○' ? 'cell_o' : 'cell';
   const bgColor = data.win ? "#d3d3d3" : "#fff";
   return (
     <Hexagon q={data.q} r={data.r} s={data.s}
       style={{ fill: bgColor, stroke: "#000", strokeWidth: .2 }}
       onClick={() => onSquareClick(data.id)}>
-      <Text className={textClass}>{data.t}</Text>
+      <Text className={cellClass}>{data.t}</Text>
     </Hexagon>
   );
 }
@@ -133,11 +133,20 @@ export default function Game() {
     setHistory(history.slice(0, step - 1));
   }
 
+  const text = [
+    <><div className="space">Next player</div><div className="text_o">○</div></>,
+    <><div className="space">Next player</div><div className="text_x">×</div></>,
+    <><div className="space">Winner</div><div className="text_x">×</div></>,
+    <><div className="space">Winner</div><div className="text_o">○</div></>
+  ]
+  let textid = 0;
+  if (win.length > 0) textid += 2;
+  if (xIsNext) textid++;
+
   return (
     <>
       <h1>
-        <span>Step {step}</span>
-        <span>{win.length > 0 ? ` winner ${xIsNext ? '○' : '×'}` : ` next mark ${xIsNext ? '×' : '○'}`}</span>
+        <span>Step {step}</span>{text[textid]}
         <button className="button" onClick={goBack} disabled={step <= 0}>Go back</button>
       </h1>
       <div className="game">

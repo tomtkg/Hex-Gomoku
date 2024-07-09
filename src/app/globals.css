@@ -6,8 +6,26 @@ h1 {
 }
 
 span{
+  margin-right: 30px;
+}
+
+.space{
+  margin-right: 5px;
+}
+
+.text_x {
   margin-right: 25px;
- }
+  margin-top: -7px;
+  font-size: 40px;
+  color: blue;
+}
+
+.text_o {
+  margin-right: 25px;
+  margin-top: -7px;
+  font-size: 40px;
+  color: red;
+}
 
 .button {
   padding: 2px 6px;
@@ -20,20 +38,20 @@ span{
   text-align: center;
 }
 
-.text {
+.cell {
   font-size: 2px;
   fill: black;
   stroke: black;
 }
 
-.text_o {
-  font-size: 6px;
-  fill: red;
-  stroke: red;
-}
-
-.text_x {
+.cell_x {
   font-size: 6px;
   fill: blue;
   stroke: blue;
+}
+
+.cell_o {
+  font-size: 6px;
+  fill: red;
+  stroke: red;
 }
