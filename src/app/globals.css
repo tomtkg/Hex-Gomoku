@@ -1,30 +1,53 @@
-h1 {
-  width: 1000px;
+.game_header {
+  max-width: 1000px;
+  margin: auto;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
-span{
-  margin-right: 30px;
+.game_status {
+  width: 510px;
+  display: inline-block;
+  font-size: 36px;
 }
 
-.space{
-  margin-right: 5px;
+.game_controls {
+  display: flex;
+  gap: 10px;
 }
 
+span {
+  width: 140px;
+  display: inline-block;
+  margin-left: 70px;
+}
+
+.text,
+.text_win {
+  width: 300px;
+  display: inline-block;
+  text-align: center;
+}
+
+.text_win {
+  font-weight: bold;
+}
+
+.text_o,
 .text_x {
-  margin-right: 25px;
-  margin-top: -7px;
+  display: inline-block;
   font-size: 40px;
-  color: blue;
+  font-weight: bold;
+  margin-left: 7px;
+  margin-top: -7px;
 }
 
 .text_o {
-  margin-right: 25px;
-  margin-top: -7px;
-  font-size: 40px;
   color: red;
+}
+
+.text_x {
+  color: blue;
 }
 
 .button {
@@ -33,25 +56,20 @@ span{
 }
 
 .game {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-}
-
-.cell {
-  font-size: 2px;
-  fill: black;
-  stroke: black;
-}
-
-.cell_x {
-  font-size: 6px;
-  fill: blue;
-  stroke: blue;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .cell_o {
   font-size: 6px;
   fill: red;
   stroke: red;
+}
+
+.cell_x {
+  font-size: 6px;
+  fill: blue;
+  stroke: blue;
 }
