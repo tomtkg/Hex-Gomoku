@@ -73,3 +73,13 @@ span {
   fill: blue;
   stroke: blue;
 }
+
+@media (max-width: 800px) {
+  .game_status {
+    font-size: 24px;
+  }
+
+  .button {
+    font-size: 20px;
+  }
+}
