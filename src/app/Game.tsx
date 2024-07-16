@@ -5,7 +5,7 @@ import { initialBoard, calculateWinner } from './utils';
 import { GameStatus } from './GameStatus';
 import { GameControls } from './GameControls';
 
-export function Board(): JSX.Element {
+export function Game(): JSX.Element {
   const [history, setHistory] = useState<number[]>([]);
   const [win, setWin] = useState<number[]>([]);
   const step = history.length;
