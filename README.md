@@ -10,7 +10,7 @@ A hex map is often called hex board or hex grid.
 
 URL: [https://tomtkg.github.io/Hex-Gomoku](https://tomtkg.github.io/Hex-Gomoku)
 
-[](https://tomtkg.github.io/Hex-Gomoku/blob/main/image.png)
+![](/image.png)
 
 ## Installation & Startup
 
