@@ -1,12 +1,12 @@
 # Hex-Gomoku
 
-This is a Gomoku (also called Five in a Row) board game on a hex map.  
-A hex map is often called hex board or hex grid.
-
 ![](https://img.shields.io/github/languages/top/tomtkg/Hex-Gomoku)
 ![](https://img.shields.io/github/languages/code-size/tomtkg/Hex-Gomoku)
 ![](https://img.shields.io/github/last-commit/tomtkg/Hex-Gomoku)
 [![CI](https://github.com/tomtkg/Hex-Gomoku/actions/workflows/ci.yml/badge.svg)](https://github.com/tomtkg/Hex-Gomoku/actions/workflows/ci.yml)
+
+This is a Gomoku (also called Five in a Row) board game on a hex map.  
+A hex map is often called hex board or hex grid.
 
 URL: [https://tomtkg.github.io/Hex-Gomoku](https://tomtkg.github.io/Hex-Gomoku)
 
