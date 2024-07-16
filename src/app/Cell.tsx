@@ -1,23 +1,20 @@
 import React from 'react';
 import { Hexagon, Text } from 'react-hexgrid';
-import { CellData } from './types';
 
 type CellProps = {
-  data: CellData;
-  onSquareClick: (id: number) => void;
+  data: {
+    nums: number[]; // id, q, r, s
+    t: string | null;
+    win: boolean;
+  }
+  onClick: (id: number) => void;
 };
 
-export function Cell({ data, onSquareClick }: CellProps): JSX.Element {
-  let cellClass = '';
-  if (data.t === '×') cellClass = 'cell_x';
-  if (data.t === '○') cellClass = 'cell_o';
-  const bgColor = data.win ? "#d3d3d3" : "#ffffff";
-
+export function Cell({ data, onClick }: CellProps): import("@emotion/react/jsx-runtime").JSX.Element {
   return (
-    <Hexagon q={data.q} r={data.r} s={data.s}
-      style={{ fill: bgColor, stroke: "#000000", strokeWidth: .2 }}
-      onClick={() => onSquareClick(data.id)}>
-      <Text className={cellClass}>{data.t}</Text>
+    <Hexagon q={data.nums[1]} r={data.nums[2]} s={data.nums[3]} onClick={() => onClick(data.nums[0])}
+      style={{ fill: data.win ? "#d3d3d3" : "#ffffff", stroke: "#000000", strokeWidth: .2 }}>
+      <Text className={data.t === '×' ? 'cell_x' : 'cell_o'}>{data.t}</Text>
     </Hexagon>
   );
 }
